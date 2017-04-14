@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Insert title here</title>
+</head>
+<script src="/socket.io/socket.io.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<script>
+  var socket = io();
+  function myFunction() {
+	  socket.emit('chat message', 'Hello World!');
+  }
+  socket.on('chat message', function(msg){
+	    $('#messages').append($('<li>').text(msg));
+	  });
+</script>
+<body>
+<ul id="messages"></ul>
+<button onclick="myFunction()">Click me</button></body>
+</html>

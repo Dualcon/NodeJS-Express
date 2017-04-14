@@ -1,0 +1,15 @@
+<h1>Chat room</h1><br />
+
+<label><h4>Online: {{clients.length}}</h4></label>
+<label><button ng-click="delete()">Delete</button></label>
+<div ng-repeat="item in clients | orderBy:'name'">
+<ul ng-click="addToInputText(item.name)">{{item.name}}</ul>
+</div>
+
+<div ng-repeat="item in messages track by $index">
+<ul>{{item.user}}: {{item.text}}</ul>
+</div>
+
+<form ng-submit="send(msg)">
+<input type="text" ng-model="msg.text" placeholder="Write a message" /><br />
+</form>

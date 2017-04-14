@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8"/>
+<title>AngularJS</title>
+</head>
+<!-- AngularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular-sanitize.js"></script>
+<!-- Angular-ui-router -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+<!-- Modules -->
+<script src="/javascripts/angularjs/modules/angularApp.js" type="text/javascript"></script>
+<!-- Controllers -->
+<script src="/javascripts/angularjs/controllers/navController.js" type="text/javascript"></script>
+<!-- Services -->
+<script src="/javascripts/angularjs/services/navService.js" type="text/javascript"></script>
+<script src="/javascripts/angularjs/services/socketService.js" type="text/javascript"></script>
+<!-- Directives -->
+<script src="/javascripts/angularjs/directives/bindHTML.js" type="text/javascript"></script>
+<!-- Socket.io -->
+<script src="/socket.io/socket.io.js"></script>
+<body ng-controller="NavController">
+<div  ng-repeat="item in menu">
+     <dir id="dir" content="item"></dir>
+</div></br>
+<!-- Views are displayed here. -->
+<ui-view></ui-view></br>
+</body>
+</html>
